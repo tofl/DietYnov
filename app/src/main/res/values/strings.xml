@@ -8,9 +8,9 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="title_cnfigure_account">Configurer le compte</string>
-    <string name="size">Taille</string>
-    <string name="birthdate">Date de naissance</string>
-    <string name="default_weight">Poids de départ</string>
+    <string name="size">Taille (cm)</string>
+    <string name="birthdate">Date de naissance (jj/mm/aaaa)</string>
+    <string name="default_weight">Poids de départ (Kg)</string>
     <string name="sex">Sexe</string>
     <string name="male">Homme</string>
     <string name="female">Femme</string>
@@ -30,4 +30,6 @@
     <string name="my_measurements_cuisse">Cuisse</string>
     <string name="my_measurements_bras">Bras</string>
     <string name="add_measurement">Ajouter une mesure</string>
+    <string name="wrong_size_value">La taille doit être comprise entre 20cm et 250cm</string>
+    <string name="wrong_weight_value">Le poids doit être comprise entre 20Kg et 700cm</string>
 </resources>

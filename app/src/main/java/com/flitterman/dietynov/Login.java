@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
 
@@ -16,6 +17,8 @@ public class Login extends AppCompatActivity {
     private EditText editWeight;
     private RadioGroup radioGroup;
     private RadioButton radioButtonFemale;
+    private TextView wrongSize;
+    private TextView wrongWeight;
     //private RadioButton radioButtonMale;
 
     settingsAdapter helper;
@@ -31,6 +34,8 @@ public class Login extends AppCompatActivity {
         radioGroup = findViewById(R.id.radioGroup);
         radioButtonFemale = findViewById(R.id.radioButtonFemale);
         //radioButtonMale = findViewById(R.id.radioButtonMale);
+        wrongSize = findViewById(R.id.wrongSize);
+        wrongWeight = findViewById(R.id.wrongWeight);
     }
 
     public void validate(View v) {
@@ -45,6 +50,27 @@ public class Login extends AppCompatActivity {
             sexe = "f";
         } else {
             sexe = "m";
+        }
+
+        int wrongElements = 0;
+
+        if (size < 20 || size > 250) {
+            wrongSize.setVisibility(View.VISIBLE);
+            wrongElements += 1;
+        } else {
+            wrongSize.setVisibility(View.GONE);
+        }
+
+
+        if (weight < 20 || weight > 700) {
+            wrongWeight.setVisibility(View.VISIBLE);
+            wrongElements += 1;
+        } else {
+            wrongWeight.setVisibility(View.GONE);
+        }
+
+        if (wrongElements > 0) {
+            return;
         }
 
         // Sauvegarder dans la base de données :
